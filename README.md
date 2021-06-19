@@ -8,7 +8,7 @@ abstract class Shape(pos: Point) {
   var position: Point = pos
         internal set
         
-  fun move(pos: Point): Self {
+  fun move(pos: Point): Self { // imaginary syntax for self type in
     position = pos
     return this
   }
