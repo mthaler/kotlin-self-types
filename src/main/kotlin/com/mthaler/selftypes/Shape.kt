@@ -22,7 +22,7 @@ class Rect(pos: Point, val s: Size): Shape(pos) {
         internal set
 
     override fun toString(): String {
-        return "Rect(s=$s, size=$size)"
+        return "Rect(position=$position, size=$size)"
     }
 }
 
