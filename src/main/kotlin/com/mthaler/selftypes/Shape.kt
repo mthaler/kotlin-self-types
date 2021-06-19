@@ -1,16 +1,29 @@
 package com.mthaler.selftypes
 
-interface Shape {
+abstract class Shape(pos: Point) {
 
-    val position: Point
+    var position: Point = pos
+        internal set
 }
 
-data class Circle(override val position: Point, val radius: Double): Shape {
+class Circle(pos: Point, val r: Double): Shape(pos) {
 
-    fun withRadius(radius: Double): Circle = copy(radius = radius)
+    var radius: Double = r
+        internal set
+
+    override fun toString(): String {
+        return "Circle(position=$position, radius=$radius)"
+    }
 }
 
-data class Rect(override val position: Point, val size: Size): Shape {
+class Rect(pos: Point, val s: Size): Shape(pos) {
 
-    fun withSize(size: Size): Rect = copy(size = size)
+    var size: Size = s
+        internal set
+
+    override fun toString(): String {
+        return "Rect(s=$s, size=$size)"
+    }
 }
+
+fun <T : Shape> T.move(value: Point) = apply { position = value }
