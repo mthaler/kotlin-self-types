@@ -17,6 +17,7 @@ abstract class Shape(pos: Point) {
   
   class Rect(pos: Point, val s: Size): Shape(pos)
 }
+
+val circle: Circle = Circle(Point(4.0, 3.0), 2.0).move(Point(5.0, 4.0))
 ```
 
-Example code demonstrating how to emulate self types with Kotlin
